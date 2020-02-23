@@ -1,11 +1,11 @@
 import React from 'react'
-import icons from '../utils/NavIcons'
+import navIcons from '../utils/NavIcons'
 
 function Navigation() {
     return (
-        icons.map(item => (
+        navIcons.map(item => (
             <div>
-                <a href="#">
+                <a target={item.target} href={item.url} key={item.id}>
                 <img style={{ height: "50px", width: "50px" }} src={item.src} alt={item.altText} />
                 <br/>
                 {item.text}
