@@ -1,6 +1,6 @@
 const NAVICONS = [
     {
-        id: 1,
+        id: "aboutme",
         name: "aboutMeIcon",
         src: "assets/about-me.svg",
         text: "about me",
@@ -9,7 +9,7 @@ const NAVICONS = [
         target:""
     },
     {
-        id: 2,
+        id: "portfolio",
         name: "portfolioIcon",
         src: "assets/portfolio.svg",
         text: "portfolio",
@@ -18,7 +18,7 @@ const NAVICONS = [
         target:""
     },
     {
-        id: 3,
+        id: "resume",
         name: "resumeIcon",
         src: "assets/resume.svg",
         text: "resume",
@@ -27,7 +27,7 @@ const NAVICONS = [
         target:"_blank"
     },
     {
-        id: 4,
+        id: "contact",
         name: "contactIcon",
         src: "assets/contact.svg",
         text: "contact",
@@ -36,7 +36,7 @@ const NAVICONS = [
         target:""
     },
     {
-        id: 5,
+        id: "puppies",
         name: "puppiesIcon",
         src: "assets/puppy.svg",
         text: "puppies",
