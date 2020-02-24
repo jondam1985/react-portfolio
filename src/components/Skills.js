@@ -3,8 +3,8 @@ import skillIcons from '../utils/SkillsIcons'
 
 function Skills() {
     return (
-        skillIcons.map(item => (
-            <img style={{height:"50px", width:"50px"}} key={item.id} src={item.src} alt={item.altText}/>
+        skillIcons.map((item, index) => (
+            <img style={{height:"50px", width:"50px"}} key={index} src={item.src} alt={item.altText}/>
         ))
     )
 }
