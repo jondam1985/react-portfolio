@@ -3,8 +3,8 @@ import projects from '../utils/PortfolioData'
 
 function Projects() {
     return (
-        projects.map(item => (
-            <div key={item.id}>
+        projects.map((item, index) => (
+            <div key={index}>
                 <h2>{item.title}</h2>
                 <img style={{ height: "50px", width: "50px" }} src={item.src} alt="" />
                 <p>{item.description}</p>
