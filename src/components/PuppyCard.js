@@ -30,7 +30,7 @@ useEffect(() => {
 return (
     puppies.map((item, index) => (
         (
-            <img style={{ height: "100px", width: "100px" }} alt="" src={item} key={index} />
+            <img className="puppy-card" alt="" src={item} key={index} />
         )
 )))
 }
