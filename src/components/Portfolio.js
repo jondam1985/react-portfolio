@@ -10,12 +10,14 @@ function Portfolio({ active, setActive }) {
     if (active === "activeportfolio") {
 
         return (
-            <div>
-                <img style={{ height: "50px", width: "50px" }} src="assets/close.svg" alt="close modal" onClick={hideModal} />
-                <h1>
+            <div className="portfolio modal-padding">
+                <img className="modal-close" src="assets/close.svg" alt="close modal" onClick={hideModal} />
+                <h1 className="modal-title">
                     portfolio
             </h1>
-                <Projects />
+                <div className="portfolio-projects">
+                    <Projects />
+                </div>
             </div>
         )
     }
