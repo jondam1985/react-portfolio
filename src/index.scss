@@ -1,0 +1,323 @@
+/* Variables */
+
+$colours: (
+	primary: #f61067,
+	aboutMe: #006ba6,
+	portfolio: #0496ff,
+	contact: #8f2d56,
+	puppies: #ffbc42,
+	font: #fff
+);
+
+$font: monospace;
+
+$fontSize: (
+	headerDesk: 3rem,
+	subHeaderDesk: 2.5rem,
+	paragraphDesk: 1.55em,
+	iconTextDesk: 2rem,
+	headerMobile: 2rem,
+	subHeaderMobile: 1.5rem,
+	paragraphMobile: 1rem,
+	iconTextMobile: 1.5rem
+);
+
+$bp: 767px;
+
+/* Functions */
+
+@function colour($colourName) {
+	@return map-get($colours, $colourName);
+}
+
+@function fontSize($size) {
+	@return map-get($fontSize, $size);
+}
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: $font;
+	color: colour(font);
+	box-sizing: border-box;
+}
+
+/* Main Page */
+
+body {
+	background-color: colour(primary);
+	height: 100%;
+}
+
+main {
+	overflow-y: hidden;
+	height: 100%;
+}
+
+.hero {
+	margin: 50px 0 0 30px;
+
+	#rotatingText {
+		font-size: fontSize(headerMobile);
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+
+	h1 {
+		font-size: fontSize(headerMobile);
+		margin-bottom: 5px;
+	}
+
+	p {
+		font-size: fontSize(subHeaderMobile);
+	}
+
+	@media screen and (min-width: 767px) {
+		#rotatingText,
+		h1 {
+			font-size: fontSize(headerDesk);
+		}
+		p {
+			font-size: fontSize(paragraphDesk);
+		}
+	}
+}
+
+.navigation {
+	width: 80%;
+	min-width: 250px;
+	max-width: 1200px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 50px auto 0 auto;
+
+	.navigation-link {
+		width: 40%;
+		height: auto;
+		max-width: 200px;
+		text-decoration: none;
+		font-size: fontSize(iconTextMobile);
+		margin: 15px;
+		text-align: center;
+	}
+
+	.navigation-link:hover,
+	.navigation-link:focus {
+		transform: scale(1.2);
+	}
+
+	.navigation-img {
+		width: 90%;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	@media only screen and (min-width: $bp) {
+		.navigation-link {
+			font-size: fontSize(iconTextDesk);
+		}
+	}
+}
+
+/* Modals */
+
+.modal {
+	z-index: 1000;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.modal-padding {
+	padding: 50px 50px 0 50px;
+}
+
+@media only screen and (min-width: $bp) {
+	.modal-padding {
+		padding: 100px 100px 0 100px;
+	}
+}
+
+.modal-title {
+	font-size: fontSize(headerMobile);
+	margin-bottom: 20px;
+}
+
+@media only screen and (min-width: $bp) {
+	.modal-title {
+		font-size: fontSize(headerDesk);
+	}
+}
+
+.modal-subheader {
+	font-size: fontSize(subHeaderMobile);
+	text-align: center;
+}
+
+@media only screen and (min-width: $bp) {
+	.modal-subheader {
+		font-size: fontSize(subHeaderDesk);
+	}
+}
+
+.modal-close {
+	width: 40px;
+	height: auto;
+	position: absolute;
+	top: 25px;
+	right: 25px;
+}
+
+@media only screen and (min-width: $bp) {
+	.modal-close {
+		width: 50px;
+		top: 50px;
+		right: 50px;
+	}
+}
+
+.modal-close:hover,
+.modal-close:focus {
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
+.modal-description {
+	width: 90%;
+	font-size: fontSize(paragraphMobile);
+	margin: 0 auto 30px auto;
+}
+
+@media only screen and (min-width: $bp) {
+	.modal-description {
+		font-size: fontSize(paragraphDesk);
+	}
+}
+
+.modal-icons-group {
+	width: 90%;
+	min-width: 250px;
+	max-width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 20px auto 0 auto;
+
+	.modal-icon {
+		width: 20%;
+		height: auto;
+		max-width: 100px;
+		margin: 15px;
+	}
+}
+
+/* About me modal */
+
+.about-me {
+	background-color: colour(aboutMe);
+	height: 100%;
+	width: 100vw;
+}
+
+.my-photo {
+	display: block;
+	width: 100px;
+	height: auto;
+	border-radius: 50%;
+	margin: 0 auto 20px auto;
+}
+
+/* Portfolio modal */
+
+.portfolio {
+	background-color: colour(portfolio);
+	height: 100%;
+	width: 100vw;
+	overflow-y: scroll;
+}
+
+.portfolio-projects {
+	width: 100%;
+	min-width: 250px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 20px auto 0 auto;
+}
+
+.project {
+	width: 90%;
+	max-width: 400px;
+	margin: 15px auto;
+
+	.project-screen {
+		display: block;
+		width: 90%;
+		margin: 15px auto;
+	}
+
+	.project-link {
+		font-size: fontSize(iconTextMobile);
+		text-decoration: none;
+		padding: 2px 3px;
+		position: relative;
+		left: 15px;
+		border: 2px solid colour(font);
+	}
+
+	@media only screen and (min-width: $bp) {
+		.project-link {
+			font-size: fontSize(iconTextDesk);
+		}
+	}
+	.project-link:hover,
+	.project-link:focus {
+		background-color: colour(font);
+		color: colour(portfolio);
+	}
+}
+
+/* Contact */
+.contact {
+	background-color: colour(contact);
+	height: 100%;
+	width: 100vw;
+}
+
+.contact-img {
+	width: 90%;
+	height: auto;
+}
+
+.contact-img:hover,
+.contact-img:focus {
+	transform: scale(1.2);
+}
+
+/* Puppies */
+
+.puppies {
+	background-color: colour(puppies);
+	height: 100%;
+	width: 100vw;
+	overflow-y: scroll;
+}
+
+.puppy-cards {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.puppy-card {
+	width: 100%;
+	height: auto;
+	min-width: 100px;
+	max-width: 300px;
+	margin: 10px auto 10px auto;
+	border: 2px solid colour(font);
+}

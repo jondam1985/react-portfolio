@@ -1,13 +1,309 @@
-body {
+/* Variables */
+/* Functions */
+/* Reset */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: monospace;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Main Page */
+body {
+  background-color: #f61067;
+  height: 100%;
 }
+
+main {
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.hero {
+  margin: 50px 0 0 30px;
+}
+
+.hero #rotatingText {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 767px) {
+  .hero #rotatingText,
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.55em;
+  }
+}
+
+.navigation {
+  width: 80%;
+  min-width: 250px;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 50px auto 0 auto;
+}
+
+.navigation .navigation-link {
+  width: 40%;
+  height: auto;
+  max-width: 200px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 15px;
+  text-align: center;
+}
+
+.navigation .navigation-link:hover,
+.navigation .navigation-link:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.navigation .navigation-img {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 767px) {
+  .navigation .navigation-link {
+    font-size: 2rem;
+  }
+}
+
+/* Modals */
+.modal {
+  z-index: 1000;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-padding {
+  padding: 50px 50px 0 50px;
+}
+
+@media only screen and (min-width: 767px) {
+  .modal-padding {
+    padding: 100px 100px 0 100px;
+  }
+}
+
+.modal-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 767px) {
+  .modal-title {
+    font-size: 3rem;
+  }
+}
+
+.modal-subheader {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 767px) {
+  .modal-subheader {
+    font-size: 2.5rem;
+  }
+}
+
+.modal-close {
+  width: 40px;
+  height: auto;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+@media only screen and (min-width: 767px) {
+  .modal-close {
+    width: 50px;
+    top: 50px;
+    right: 50px;
+  }
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+}
+
+.modal-description {
+  width: 90%;
+  font-size: 1rem;
+  margin: 0 auto 30px auto;
+}
+
+@media only screen and (min-width: 767px) {
+  .modal-description {
+    font-size: 1.55em;
+  }
+}
+
+.modal-icons-group {
+  width: 90%;
+  min-width: 250px;
+  max-width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px auto 0 auto;
+}
+
+.modal-icons-group .modal-icon {
+  width: 20%;
+  height: auto;
+  max-width: 100px;
+  margin: 15px;
+}
+
+/* About me modal */
+.about-me {
+  background-color: #006ba6;
+  height: 100%;
+  width: 100vw;
+}
+
+.my-photo {
+  display: block;
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+}
+
+/* Portfolio modal */
+.portfolio {
+  background-color: #0496ff;
+  height: 100%;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.portfolio-projects {
+  width: 100%;
+  min-width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px auto 0 auto;
+}
+
+.project {
+  width: 90%;
+  max-width: 400px;
+  margin: 15px auto;
+}
+
+.project .project-screen {
+  display: block;
+  width: 90%;
+  margin: 15px auto;
+}
+
+.project .project-link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 2px 3px;
+  position: relative;
+  left: 15px;
+  border: 2px solid #fff;
+}
+
+@media only screen and (min-width: 767px) {
+  .project .project-link {
+    font-size: 2rem;
+  }
+}
+
+.project .project-link:hover,
+.project .project-link:focus {
+  background-color: #fff;
+  color: #0496ff;
+}
+
+/* Contact */
+.contact {
+  background-color: #8f2d56;
+  height: 100%;
+  width: 100vw;
+}
+
+.contact-img {
+  width: 90%;
+  height: auto;
+}
+
+.contact-img:hover,
+.contact-img:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+/* Puppies */
+.puppies {
+  background-color: #ffbc42;
+  height: 100%;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.puppy-cards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.puppy-card {
+  width: 100%;
+  height: auto;
+  min-width: 100px;
+  max-width: 300px;
+  margin: 10px auto 10px auto;
+  border: 2px solid #fff;
+}
+/*# sourceMappingURL=index.css.map */
