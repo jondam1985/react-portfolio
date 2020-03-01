@@ -21,7 +21,7 @@ const SKILLSICONS = [
     },
     {
         id: 5,
-        src: "assets/jquery.svg",
+        src: "assets/jquery.jpg",
         altText: "jquery"
     },
     {

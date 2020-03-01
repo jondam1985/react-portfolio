@@ -4,7 +4,7 @@ import skillIcons from '../utils/SkillsIcons'
 function Skills() {
     return (
         skillIcons.map((item, index) => (
-            <img style={{height:"50px", width:"50px"}} key={index} src={item.src} alt={item.altText}/>
+            <img className="modal-icon" key={index} src={item.src} alt={item.altText}/>
         ))
     )
 }
