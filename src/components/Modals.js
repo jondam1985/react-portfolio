@@ -6,7 +6,7 @@ import Puppies from './Puppies'
 
 function Modals({ active, setActive }) {
     return (
-        <div>
+        <div className="modal">
             <AboutMe active={active} setActive={setActive} />
             <Portfolio active={active} setActive={setActive} />
             <Contact active={active} setActive={setActive} />
