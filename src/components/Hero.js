@@ -12,16 +12,16 @@ function Hero() {
             if (index === helloArr.length) {
                 clearInterval(rotation);
             }
-        }, 500);
+        }, 700);
     })
 
     return (
-        <div>
-            <h1 id="rotatingText">
-                hello,
-        </h1>
+        <div className="hero">
+            <p id="rotatingText">
+                hello
+        </p>
             <h1>
-                i am damian
+               i am damian
         </h1>
             <p>
                 your friendly neighbourhood web developer
@@ -30,4 +30,4 @@ function Hero() {
     )
 }
 
-export default Hero
+export default Hero;
